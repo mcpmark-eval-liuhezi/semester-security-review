@@ -31,7 +31,7 @@ Selected as the most prominent currently-listed high-severity advisory in the np
 | **Affected versions** | <= 5.0.0 |
 | **First patched version** | 5.0.1 |
 | **Severity** | **High** (CVSS 8.8 per NVD) |
-| **Weakness** | CWE-1921 / CWE-1321 — Improperly Controlled Modification of Object Prototype Attributes (Prototype Pollution) |
+| **Weakness** | CWE-1321 — Improperly Controlled Modification of Object Prototype Attributes (Prototype Pollution) |
 | **Source repo** | BinaryMuse/toml-node |
 
 **Summary:** Parsing a TOML document can write to `Object.prototype`. The key-path desynchronization described in CVE-2026-63376 is still reachable when spelled with a quote character instead of a dot, and the owned-container check is not applied on the path that matters. A four-line TOML document parsed with `toml.parse()` writes a property onto `Object.prototype`, where it is visible to every object in the process — including objects produced by unrelated libraries.
